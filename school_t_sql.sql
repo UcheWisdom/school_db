@@ -579,6 +579,26 @@ JOIN lecturers l
 GO
 
 
+CREATE VIEW v_student_course_details AS
+SELECT
+    s.student_id,
+    s.first_name,
+    s.last_name,
+    c.course_title,
+    c.course_code,
+    e.semester,
+    e.session
+
+FROM students s
+
+JOIN enrollments e
+    ON s.student_id = e.student_id
+    
+JOIN courses c
+    ON e.course_id = c.course_id;
+GO
+
+
 
 -- =========================================
 -- TEST SELECTS
@@ -598,3 +618,4 @@ SELECT * FROM v_all_student_details;
 SELECT * FROM v_student_results;
 SELECT * FROM v_department_student_count;
 SELECT * FROM v_students_courses_lecturers;
+SELECT * FROM v_student_course_details;
