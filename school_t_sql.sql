@@ -615,7 +615,7 @@ SELECT * FROM fees;
 SELECT * FROM guardians;
 
 SELECT * FROM v_all_student_details;
-SELECT * FROM v_student_results;
+SELECT * FROM v_student_results ORDER BY student_id ASC;
 SELECT * FROM v_department_student_count;
-SELECT * FROM v_students_courses_lecturers;
-SELECT * FROM v_student_course_details;
+SELECT * FROM v_students_courses_lecturers ORDER BY student_id ASC;
+SELECT * FROM v_student_course_details ORDER BY student_id ASC;
